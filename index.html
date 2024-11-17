@@ -37,148 +37,193 @@
             padding: 50px;
         }
 
-        .account-input {
-            font-size: 18px;
-            padding: 10px;
-            margin: 10px;
-            border: 2px solid #d63384;
-            border-radius: 5px;
-            outline: none;
-        }
+         .account-input {
+        font-size: 18px;
+        padding: 10px;
+        margin: 10px;
+        border: 2px solid #d63384;
+        border-radius: 5px;
+        outline: none;
+    }
 
-        .account-profile {
-            margin-top: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #6a4c9c;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .account-profile {
+        margin-top: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #6a4c9c;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-        .slider {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            padding: 20px;
-            margin-top: 30px;
-            scroll-snap-type: x mandatory;
-            width: 100%;
-            justify-content: center;
-        }
+    /* Slider Styles */
+    .slider {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding: 20px;
+        margin-top: 30px;
+        scroll-snap-type: x mandatory;
+        width: 100%;
+        justify-content: center;
+    }
 
-        .slider::-webkit-scrollbar {
-            display: none;
-        }
+    .slider::-webkit-scrollbar {
+        display: none;
+    }
 
-        .image-container {
-            flex: 0 0 100%;
-            max-width: 400px; /* Responsive max width */
-            width: 100%;
+    .image-container {
+        flex: 0 0 100%;
+        max-width: 400px; /* Responsive max width */
+        width: 100%;
+        height: auto;
+        margin: auto;
+        padding: 20px;
+        border: 2px solid #fff; /* White border */
+        border-radius: 15px; /* Rounded corners */
+        background-color: #fff;
+        scroll-snap-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /* Added image border styling */
+    .image-border {
+        border: 5px solid white;
+        padding: 10px;
+        margin-bottom: 20px;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .image-border img {
+        width: 100%;
+        height: auto;
+        max-width: 500px; /* Ensures images are responsive */
+    }
+
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px; /* Rounded corners for the image */
+        object-fit: cover; /* Ensures the image fills the container */
+    }
+
+    /* Buttons Section */
+    .buttons {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;  /* Allows the buttons to wrap on smaller screens */
+        justify-content: center;  /* Centers the buttons */
+        gap: 10px;
+        padding-bottom: 15px;  /* Ensures there is some spacing below the buttons */
+    }
+
+    .rate-button {
+        font-size: 14px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .real { background-color: #4CAF50; color: white; }
+    .umm { background-color: #FFC107; color: white; }
+    .not-valid { background-color: #FF5252; color: white; }
+
+    .real.selected { background-color: #2e8b57; }
+    .umm.selected { background-color: #ff8c00; }
+    .not-valid.selected { background-color: #ff0000; }
+
+    /* Instruction Box */
+    .instruction {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 16px;
+        color: #333;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 5px 15px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Summary Box */
+    .summary {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    /* Responsive Image Styling */
+    @media (max-width: 768px) {
+        .image-border img {
+            max-width: 100%;
             height: auto;
-            margin: auto;
-            padding: 20px;
-            border: 2px solid #fff; /* White border */
-            border-radius: 15px; /* Rounded corners */
-            background-color: #fff;
-            scroll-snap-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            box-sizing: border-box;
         }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            border-radius: 15px; /* Rounded corners for the image */
-            object-fit: cover; /* Ensures the image fills the container */
+        
+        .image-border {
+            padding: 5px;
         }
 
         .buttons {
-            margin-top: 15px;
             display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .rate-button {
-            font-size: 14px;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .real { background-color: #4CAF50; color: white; }
-        .umm { background-color: #FFC107; color: white; }
-        .not-valid { background-color: #FF5252; color: white; }
-
-        .real.selected { background-color: #2e8b57; }
-        .umm.selected { background-color: #ff8c00; }
-        .not-valid.selected { background-color: #ff0000; }
-
-        .instruction {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 16px;
-            color: #333;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 5px 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .summary {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .accounts-list {
-            margin-top: 30px;
-            text-align: center;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .account-box {
-            width: 250px;
-            height: auto;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
+            align-items: center;
         }
 
-        .account-circle {
-            width: 50px;
-            height: 50px;
-            background-color: #6a4c9c;
-            border: 2px solid #d63384;
-            border-radius: 50%;
-            margin-bottom: 10px;
+        .buttons button {
+            width: 80%;
+            margin: 10px 0;
         }
+    }
 
-        .account-name {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+    /* Account Section */
+    .accounts-list {
+        margin-top: 30px;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-        .account-ratings {
-            font-size: 16px;
-            text-align: center;
-        }
-    </style>
+    .account-box {
+        width: 250px;
+        height: auto;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .account-circle {
+        width: 50px;
+        height: 50px;
+        background-color: #6a4c9c;
+        border: 2px solid #d63384;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .account-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .account-ratings {
+        font-size: 16px;
+        text-align: center;
+    }
+</style>
 </head>
 <body>
 
@@ -282,25 +327,64 @@
     });
 
     // Render images one by one
-    function renderSlider() {
-        const slider = document.getElementById("slider");
-        const currentImage = images[currentImageIndex];
+function renderSlider() {
+    const slider = document.getElementById("slider");
+    const currentImage = images[currentImageIndex];
 
-        const container = document.createElement("div");
-        container.classList.add("image-container");
+    const container = document.createElement("div");
+    container.classList.add("image-container");
 
-        const title = document.createElement("h3");
-        title.textContent = currentImage.title;
-        container.appendChild(title);
+    const title = document.createElement("h3");
+    title.textContent = currentImage.title;
+    container.appendChild(title);  // Add title above image
 
-        const img = document.createElement("img");
-        img.src = currentImage.url;
-        img.alt = currentImage.title;
-        container.appendChild(img);
+    const img = document.createElement("img");
+    img.src = currentImage.url;
+    img.alt = currentImage.title;
+    container.appendChild(img);  // Add image
 
-        slider.innerHTML = ''; // Clear previous content
-        slider.appendChild(container);
-    }
+    // BUTTONS SECTION: Add the buttons div for rating
+    const buttonsDiv = document.createElement("div");
+    buttonsDiv.classList.add("buttons");
+
+    const realButton = createRatingButton("Real", "real");
+    const ummButton = createRatingButton("Umm", "umm");
+    const notValidButton = createRatingButton("Not Valid", "not-valid");
+
+    buttonsDiv.appendChild(realButton);
+    buttonsDiv.appendChild(ummButton);
+    buttonsDiv.appendChild(notValidButton);
+
+    // Add the next button inside the buttons div
+    const nextButton = document.createElement("button");
+    nextButton.id = "next-button";
+    nextButton.textContent = "Next";
+    nextButton.style.display = "inline-block";
+    nextButton.style.fontSize = "24px";
+    nextButton.style.padding = "15px 30px";
+    nextButton.style.marginTop = "10px"; // Add space between buttons
+
+    buttonsDiv.appendChild(nextButton);  // Add the Next button after the rating buttons
+
+    container.appendChild(buttonsDiv);  // Append the buttons div (containing rating buttons + Next)
+
+    slider.innerHTML = ''; // Clear previous images
+    slider.appendChild(container);
+
+    // Next button functionality
+    nextButton.onclick = function() {
+        currentImageIndex++;  // Increment the index to go to the next image
+        if (currentImageIndex < images.length) {
+            renderSlider();  // Render the next image
+        } else {
+            // If all images have been shown, hide the game and show results
+            document.getElementById("game-section").style.display = "none";
+            document.getElementById("results-section").style.display = "block";
+            renderResults(); // Function to render results
+        }
+    };
+}
+
 
     // Store rating choices and go to the next image
     function storeRating(rating) {
